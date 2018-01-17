@@ -32,4 +32,30 @@ public class StudentScoreDAO {
         }
         return null;
     }
+    public boolean update(Student s)
+    {
+        for (Student t : mylist)
+        {
+            if (t.id == s.id)
+            {
+                t.name=s.name;
+                t.score=s.score;
+
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean delete(int id)
+    {
+        for (Student t : mylist)
+        {
+            if (t.id == id)
+            {
+                mylist.remove(t);
+                return true;
+            }
+        }
+        return false;
+    }
 }
